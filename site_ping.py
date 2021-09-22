@@ -1,5 +1,5 @@
-from sad.checker.Pinger import Pinger
-from sad.checker.WindowsClient import Windows_Client
+from checker.Pinger import Pinger
+from checker.WindowsClient import Windows_Client
 
 user = Windows_Client()
 service = Pinger()
