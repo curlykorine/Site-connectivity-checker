@@ -1,3 +1,4 @@
+import sqlite3
 import time
 
 import requests
@@ -7,6 +8,7 @@ from checker.Observer import Observer
 class Pinger(Observer):
     def __init__(self):
         self._client_list = []
+
 
     def register(self, user:Client):
         self._client_list.append(user)
@@ -31,11 +33,13 @@ class Pinger(Observer):
             return False
 
     def run(self):
+        self.conn = sqlite3.connect("./checker/database/database")
+        self.cursor = self.conn.cursor()
         while len(self._client_list) != 0:
             #iterate on each user
             for i in self._client_list:
                 #iterate on each users's site
-                for j in i.get_check_list():
+                for j in i.get_check_list(self.cursor):
                     #ping site
                     status = self.ping_site(j)
                     if status:
@@ -44,4 +48,4 @@ class Pinger(Observer):
 
     def send_notification(self, reciver:Client, site):
         #call get_notification on Client side
-        reciver.get_notification(site)
+        reciver.get_notification(site, self.conn, self.cursor)
