@@ -33,9 +33,9 @@ Request processing system | a system that gets requests from a user and dependin
 
 ## Features
 * `add <site link>` to add the site to checklist of sites
-* `del <site link>` to delete the site from checklist of sites
-* `update_add <site link>` to start pinging the site untill it will be available
-* `update_remove <site link>` to stop pinging the site if you are not interested anymore in this site
+* `delete <site link>` to delete the site from checklist of sites
+* `on <site link>` to start pinging the site untill it will be available
+* `off <site link>` to stop pinging the site if you are not interested anymore in this site
 * `checklist` to see the checklist of sites
 * `quit` to stop the app
 
