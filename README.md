@@ -11,7 +11,7 @@ Usually, when people need some site to interact with and it crashes, they update
 ## Getting started guide
 1. From [Site-connectivity-checker](https://github.com/curlykorine/Site-connectivity-checker) repository download all the documents to your local project
 2. Write in command line/terminal from the project directory `pip install -r requirements.txt` to install all the required libraries 
-3. From the project directory write in command line/terminal to run the app: `python3 ./main.py` or `python main.py`
+3. From the project directory write in command line/terminal `python3 ./main.py` or `python main.py` to run the app
 
 ## Glossary
 Name                      | Description
