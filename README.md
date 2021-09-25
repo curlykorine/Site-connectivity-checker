@@ -21,7 +21,7 @@ Pinger/Checker            | a program that sends ICMP messages to the site serve
 Notification              | a short window that activates when the site is available
 Site links storage        | a local database to store the site links
 Checklist/Data            | a window with site links storage 
-Request processing system | a system that gets requests from a user and depending on that sends this request to the data storage or to the pinger
+Request processing system | a system that gets request from the user and depending on that sends this request to the data storage or to the pinger
 
 ## How to use
 1. After starting app execution you should add sites, which you often visit, to the checklist.
