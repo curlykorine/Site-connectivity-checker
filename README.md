@@ -26,7 +26,7 @@ Request processing system | a system that gets request from the user and dependi
 ## How to use
 1. After starting app execution you should add sites, which you often visit, to the checklist.
 2. When some of these sites crashes start pinging it.
-3. As soon the site is available again the app will stop pinging it and send you notification with a link.
+3. As soon as the site is available again the app will stop pinging it and send you notification with a link.
 4. If the app is pinging the site, but you are not interested in this site anymore, just stop pinging.
 5. You can also see the checklist of sites, add new sites and delete old ones whenever you want.
 6. Stop app execution if there is no need in that.
