@@ -38,8 +38,9 @@ class Pinger(Observer):
         while len(self._client_list) != 0:
             #iterate on each user
             for i in self._client_list:
+                print("Start to check user's checklist")
                 #iterate on each users's site
-                for j in i.get_check_list(self.cursor):
+                for j in i.get_check_list():
                     #ping site
                     status = self.ping_site(j)
                     if status:
@@ -48,4 +49,4 @@ class Pinger(Observer):
 
     def send_notification(self, reciver:Client, site):
         #call get_notification on Client side
-        reciver.get_notification(site, self.conn, self.cursor)
+        reciver.get_notification(site)
