@@ -5,7 +5,7 @@ from threading import Thread
 user = Windows_Client()
 service = Pinger()
 service.register(user)
-thread = Thread(target= service.run)
+thread = Thread(target=service.run)
 thread.start()
 
 try:
