@@ -31,6 +31,7 @@ class Windows_Client(Client):
             cursor.execute(f"""INSERT INTO sites
                                     VALUES('{get_mac()}', '{site}', TRUE)""")
             conn.commit()
+            print(f"{site} was added to checklist")
             conn.close()
         except:
             print(f"{site} is incorrect URL!")
@@ -40,8 +41,8 @@ class Windows_Client(Client):
         cursor = conn.cursor()
         cursor.execute(f"""DELETE FROM sites
                                 WHERE site = '{site}'""")
-        print(f"{site} was deleted from checklist")
         conn.commit()
+        print(f"{site} was deleted from checklist")
         conn.close()
 
     def update_to_check(self, site):
@@ -51,7 +52,7 @@ class Windows_Client(Client):
                                 SET to_check = TRUE 
                                 WHERE site = '{site}'
                                 AND client = '{get_mac()}'""")
-        print(f"{site} will be checked")
+        print(f"{site} will be checked from now")
         conn.commit()
         conn.close()
 
@@ -62,7 +63,7 @@ class Windows_Client(Client):
                                 SET to_check = FALSE 
                                 WHERE site = '{site}'
                                 AND client = '{get_mac()}'""")
-        print(f"{site} will not be checked")
+        print(f"{site} will not be checked from now")
         conn.commit()
         conn.close()
 

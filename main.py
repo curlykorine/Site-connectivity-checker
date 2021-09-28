@@ -5,18 +5,19 @@ from threading import Thread
 user = Windows_Client()
 service = Pinger()
 service.register(user)
-thread = Thread(target=service.run)
+thread = Thread(target= service.run)
 thread.start()
 
-try:
-    while True:
+
+while True:
+    try:
         command = input().split()
         #ex: add https://yandex.ru/
         if command[0].lower() == "add":
             user.add_to_check_list(command[1])
 
-        #ex: del https://www.google.ru/
-        elif command[0].lower() == "del":
+        #ex: delete https://www.google.ru/
+        elif command[0].lower() == "delete":
             user.del_from_check_list(command[1])
 
         #ex: update_add https://docs.google.com/ - site should be in checklist
@@ -42,7 +43,8 @@ try:
             thread.join()
             break
 
-except Exception as e:
-    print(e)
-finally:
-    quit()
+        else:
+            print("Incorrect command!")
+
+    except Exception as e:
+        print(e)

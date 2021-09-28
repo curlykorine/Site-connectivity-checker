@@ -10,6 +10,7 @@ class Pinger(Observer):
         self._to_check = True
         self._client_list = []
 
+
     def register(self, user:Client):
         self._client_list.append(user)
 
@@ -29,7 +30,7 @@ class Pinger(Observer):
             return True
         #else print it's status code
         else:
-            print(f"Site {url} is not available, status code = {r.status_code}")
+            print(f"Site {url} returned status code = {r.status_code}")
             return False
 
     def run(self):
