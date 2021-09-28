@@ -10,7 +10,6 @@ class Pinger(Observer):
         self._to_check = True
         self._client_list = []
 
-
     def register(self, user:Client):
         self._client_list.append(user)
 
