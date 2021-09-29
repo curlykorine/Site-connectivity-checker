@@ -25,7 +25,7 @@ while True:
             try:
                 user.update_to_check(command[1])
             except:
-                print("site not in checklist")
+                print("site in checklist")
 
         # ex: update_remove https://docs.google.com/ - site should be in checklist
         elif command[0].lower() == "off":
