@@ -3,7 +3,7 @@ from checker.WindowsClient import Windows_Client
 from threading import Thread
 
 user = Windows_Client()
-service = Pinger()
+service = Pinger(sleep=7)
 service.register(user)
 thread = Thread(target= service.run)
 thread.start()
@@ -34,8 +34,13 @@ while True:
             except:
                 print("site not in checklist")
 
+        #shows sites which pinger is pinging
         elif command[0].lower() == "checklist":
-            print("List of sites:",user.get_check_list())
+            print("List of sites:",user.get_check_list(only_marked=True))
+
+        #shows all sites of user
+        elif command[0].lower() == "sitelist":
+            print("List of sites:", user.get_check_list(only_marked=False))
 
         #just quit
         elif command[0].lower() == "quit":
