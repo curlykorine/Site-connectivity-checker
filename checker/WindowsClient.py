@@ -67,11 +67,15 @@ class Windows_Client(Client):
         conn.commit()
         conn.close()
 
-    def get_check_list(self):
+    def get_check_list(self, only_marked = True):
         conn = sqlite3.connect("./checker/database/database")
         cursor = conn.cursor()
+        if only_marked == True:
+            to_check = "TRUE"
+        else:
+            to_check = "FALSE"
         cursor.execute(f"""SELECT site FROM sites 
-                                WHERE to_check = TRUE
+                                WHERE to_check = {to_check}
                                 AND client = '{get_mac()}'""")
         rows = cursor.fetchall()
         new_list_to_check = []
