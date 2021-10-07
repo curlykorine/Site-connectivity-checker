@@ -7,15 +7,17 @@ from win10toast_click import ToastNotifier
 import validators
 
 class Windows_Client(Client):
-    def __init__(self):
+    def __init__(self, path = "./checker/database/database", icon_path = "./checker/database/icon.ico"):
         self._list_to_check = []
         self.site_to_open = ''
         self.toast = ToastNotifier()
+        self.path = path
+        self.icon_path = icon_path
 
     def get_notification(self, site):
-        conn = sqlite3.connect("./checker/database/database")
+        conn = sqlite3.connect(self.path)
         self.site_to_open = site
-        self.toast.show_toast(title=f"{site}", msg="Site is available", duration=3, icon_path="./checker/database/icon.ico", threaded=True,
+        self.toast.show_toast(title=f"{site}", msg="Site is available", duration=3, icon_path=self.icon_path, threaded=True,
                          callback_on_click=self.open_link)
         while self.toast.notification_active():
             time.sleep(0.1)
@@ -26,7 +28,7 @@ class Windows_Client(Client):
         try:
             if not validators.url(site):
                 raise validators.ValidationFailure
-            conn = sqlite3.connect("./checker/database/database")
+            conn = sqlite3.connect(self.path)
             cursor = conn.cursor()
             cursor.execute(f"""INSERT INTO sites
                                     VALUES('{get_mac()}', '{site}', TRUE)""")
@@ -37,7 +39,7 @@ class Windows_Client(Client):
             print(f"{site} is incorrect URL!")
 
     def del_from_check_list(self, site):
-        conn = sqlite3.connect("./checker/database/database")
+        conn = sqlite3.connect(self.path)
         cursor = conn.cursor()
         cursor.execute(f"""DELETE FROM sites
                                 WHERE site = '{site}'""")
@@ -46,7 +48,7 @@ class Windows_Client(Client):
         conn.close()
 
     def update_to_check(self, site):
-        conn = sqlite3.connect("./checker/database/database")
+        conn = sqlite3.connect(self.path)
         cursor = conn.cursor()
         cursor.execute(f"""UPDATE sites 
                                 SET to_check = TRUE 
@@ -57,7 +59,7 @@ class Windows_Client(Client):
         conn.close()
 
     def update_not_to_check(self, site):
-        conn = sqlite3.connect("./checker/database/database")
+        conn = sqlite3.connect(self.path)
         cursor = conn.cursor()
         cursor.execute(f"""UPDATE sites 
                                 SET to_check = FALSE 
@@ -68,15 +70,15 @@ class Windows_Client(Client):
         conn.close()
 
     def get_check_list(self, only_marked = True):
-        conn = sqlite3.connect("./checker/database/database")
+        conn = sqlite3.connect(self.path)
         cursor = conn.cursor()
         if only_marked == True:
-            to_check = "TRUE"
+            cursor.execute(f"""SELECT site FROM sites 
+                                            WHERE to_check = TRUE
+                                            AND client = '{get_mac()}'""")
         else:
-            to_check = "FALSE"
-        cursor.execute(f"""SELECT site FROM sites 
-                                WHERE to_check = {to_check}
-                                AND client = '{get_mac()}'""")
+            cursor.execute(f"""SELECT site FROM sites 
+                                                        WHERE client = '{get_mac()}'""")
         rows = cursor.fetchall()
         new_list_to_check = []
         for i in rows:
