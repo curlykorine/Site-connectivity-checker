@@ -2,3 +2,4 @@ requests
 win10toast_click==0.1.2
 uuid
 validators
+pytest
