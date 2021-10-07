@@ -51,5 +51,11 @@ while True:
         else:
             print("Incorrect command!")
 
+    except KeyboardInterrupt:
+        service._to_check = False
+        thread.join()
+        print("quit")
+        break
+
     except Exception as e:
         print(e)
