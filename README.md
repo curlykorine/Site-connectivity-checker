@@ -42,7 +42,7 @@ Request processing system | a system that gets request from the user and dependi
 * `quit` to stop the app
 
 ## Demo
-([![Watch the video]]https://drive.google.com/file/d/1w_hdvoOGDsK3SefBtQSi0vinlsw8ISnz/view?usp=sharing)
+[![Watch the video](https://user-images.githubusercontent.com/69847727/136713102-8d3913a2-83f5-433b-b3d4-998c2c78bfbc.png)](https://drive.google.com/file/d/1w_hdvoOGDsK3SefBtQSi0vinlsw8ISnz/view?usp=sharing)
 
 ## Design decisions
 We decided to use [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) as it perfectly suits to our solution: an object (pinger) maintains dependent (user), called observer, and  automatically notifies it about any changes (sites' availability) using special methods (sending notifications).
