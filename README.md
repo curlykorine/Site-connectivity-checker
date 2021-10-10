@@ -41,6 +41,9 @@ Request processing system | a system that gets request from the user and dependi
 * `sitelist` to see the list of all sites added
 * `quit` to stop the app
 
+## Demo
+[![Watch the video]]([![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY))
+
 ## Design decisions
 We decided to use [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) as it perfectly suits to our solution: an object (pinger) maintains dependent (user), called observer, and  automatically notifies it about any changes (sites' availability) using special methods (sending notifications).
 
@@ -59,6 +62,9 @@ Here static and dynamic view diagrams of Site connectivity checker project.
 
 ![image](https://user-images.githubusercontent.com/69847727/136712455-114d9563-2aaf-4b2a-8f51-eb3a5a9a27c7.png)
 ![image](https://user-images.githubusercontent.com/69847727/134787343-0310f0ba-1a09-4f75-8a11-3a44077a3b41.png)
+
+## Code quality
+
 
 ## Authors
 Evgeniy Lutanin, Karina Singatullina,  
