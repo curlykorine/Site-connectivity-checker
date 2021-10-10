@@ -20,14 +20,14 @@ while True:
         elif command[0].lower() == "delete":
             user.del_from_check_list(command[1])
 
-        #ex: on https://docs.google.com/ - site should be in checklist
+        #ex: on https://docs.google.com/ - site has to be in the sitelist
         elif command[0].lower() == "on":
             try:
                 user.update_to_check(command[1])
             except:
                 print("site in checklist")
 
-        # ex: off https://docs.google.com/ - site should be in checklist
+        # ex: off https://docs.google.com/ - site has to be in the sitelist
         elif command[0].lower() == "off":
             try:
                 user.update_not_to_check(command[1])
@@ -38,7 +38,7 @@ while True:
         elif command[0].lower() == "checklist":
             print("List of sites:",user.get_check_list(only_marked=True))
 
-        # shows all sites of user
+        # shows all sites added by user
         elif command[0].lower() == "sitelist":
             print("List of sites:", user.get_check_list(only_marked=False))
 
