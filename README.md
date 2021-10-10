@@ -54,7 +54,7 @@ We decided to use [observer pattern](https://en.wikipedia.org/wiki/Observer_patt
 ![image](https://user-images.githubusercontent.com/69847727/134787351-17ae8031-4ecf-41ee-b876-662e076e5a03.png)
 
 ## Architecture decisions
-Here static and dynamic view diagrams of Site connectivity checker project
+Here static and dynamic view diagrams of Site connectivity checker project.
 
 ![image](https://user-images.githubusercontent.com/69847727/136712455-114d9563-2aaf-4b2a-8f51-eb3a5a9a27c7.png)
 ![image](https://user-images.githubusercontent.com/69847727/134787343-0310f0ba-1a09-4f75-8a11-3a44077a3b41.png)
