@@ -31,9 +31,9 @@ class Windows_Client(Client):
             conn = sqlite3.connect(self.path)
             cursor = conn.cursor()
             cursor.execute(f"""INSERT INTO sites
-                                    VALUES('{get_mac()}', '{site}', TRUE)""")
+                                    VALUES('{get_mac()}', '{site}', FALSE)""")
             conn.commit()
-            print(f"{site} was added to checklist")
+            print(f"{site} was added to sitelist")
             conn.close()
         except:
             print(f"{site} is incorrect URL!")
@@ -44,7 +44,7 @@ class Windows_Client(Client):
         cursor.execute(f"""DELETE FROM sites
                                 WHERE site = '{site}'""")
         conn.commit()
-        print(f"{site} was deleted from checklist")
+        print(f"{site} was deleted from sitelist")
         conn.close()
 
     def update_to_check(self, site):
