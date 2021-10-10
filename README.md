@@ -1,8 +1,8 @@
 # Site connectivity checker
-Desktop application for checking site connection in a background mode by sending ICMP messages.
+Command line application for checking site connection in a background mode by sending ICMP messages.
 
 ## Problem and solution
-Usually, when people need some site to interact with and it crashes, they update the page many times to check whether the site is available or not. Instead of this, we propose the desktop app which will ping the site every minute by sending ICMP messages in a background mode. When the site becomes available the app will send notification with site link to the user.
+Usually, when people need some site to interact with and it crashes, they update the page many times to check whether the site is available or not. Instead of this, we propose the command line app which will ping the site every minute by sending ICMP messages in a background mode. When the site becomes available the app will send notification with site link to the user.
 
 ## Prerequirements
 * Python3
@@ -40,12 +40,18 @@ Request processing system | a system that gets request from the user and dependi
 * `sitelist` to see the list of all sites added
 * `quit` to stop the app
 
-## Architecture decisions
+## Design decisions
 We decided to use [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) as it perfectly suits to our solution: an object (pinger) maintains dependent (user), called observer, and  automatically notifies it about any changes (sites' availability) using special methods (sending notifications).
 
-![image](https://user-images.githubusercontent.com/69847727/134787343-0310f0ba-1a09-4f75-8a11-3a44077a3b41.png)
+UML class diagram
+![image](![image](https://user-images.githubusercontent.com/69847727/136710676-d5fbc0ea-13d3-4f53-9d64-9a214d0b40e4.png)
+
+UML sequence diagram
 ![image](https://user-images.githubusercontent.com/69847727/134787351-17ae8031-4ecf-41ee-b876-662e076e5a03.png)
-![image](https://user-images.githubusercontent.com/69847727/134787464-a5ae3cf2-5a77-45f7-9645-c0a86edffdb6.png)
+
+## Architecture decisions
+Dynamic view diagram
+![image](https://user-images.githubusercontent.com/69847727/134787343-0310f0ba-1a09-4f75-8a11-3a44077a3b41.png)
 
 ## Authors
 Evgeniy Lutanin, Karina Singatullina,  
