@@ -19,24 +19,25 @@ Name                      | Description
 Ping                      | an ICMP message to the site server
 Pinger/Checker            | a program that sends ICMP messages to the site server
 Notification              | a short window that activates when the site is available
-Site links storage        | a local database to store the site links
-Checklist/Data            | a window with site links storage 
+Sitelist/Data             | a local database to store all the site links
+Checklist                 | a pinging at the moment site links storage 
 Request processing system | a system that gets request from the user and depending on that sends this request to the data storage or to the pinger
 
 ## How to use
-1. After starting app execution you should add sites, which you often visit, to the checklist.
-2. When some of these sites crashes start pinging it.
-3. As soon as the site is available again the app will stop pinging it and send you notification with a link.
-4. If the app is pinging the site, but you are not interested in this site anymore, just stop pinging.
-5. You can also see the checklist of sites, add new sites and delete old ones whenever you want.
+1. After starting app execution you should add sites, which you often visit, to the sitelist.
+2. When some of these sites crashes - start pinging it, also this site will be added to the checklist automatically.
+3. As soon as the site is available again, the app will stop pinging it, send you notification with a link and delete this site from the checklist.
+4. If the app is pinging the site, but you are not interested in that site anymore, just stop pinging.
+5. You can also see the sitelist, the checklist, add new sites and delete old ones whenever you want.
 6. Stop app execution if there is no need in that.
 
 ## Features
-* `add <site link>` to add the site to checklist of sites
-* `delete <site link>` to delete the site from checklist of sites
+* `add <site link>` to add the site to sitelist
+* `delete <site link>` to delete the site from sitelist
 * `on <site link>` to start pinging the site untill it will be available
 * `off <site link>` to stop pinging the site if you are not interested anymore in this site
-* `checklist` to see the checklist of sites
+* `checklist` to see the list of sites that pinger is pinging now
+* `sitelist` to see the list of all sites added
 * `quit` to stop the app
 
 ## Architecture decisions
