@@ -44,6 +44,13 @@ Request processing system | a system that gets request from the user and dependi
 We decided to use [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) as it perfectly suits to our solution: an object (pinger) maintains dependent (user), called observer, and  automatically notifies it about any changes (sites' availability) using special methods (sending notifications).
 
 ![image](https://user-images.githubusercontent.com/69847727/136710676-d5fbc0ea-13d3-4f53-9d64-9a214d0b40e4.png)
+
+* Single Responsibility Principle - the source code consists of 2 classes: one of them is a pinger, which is responsible for pinging sites. Another class is responsible for the client side, where actions with the database take place and notifications are called. In our case, we have implemented a client under WindowClient.py.
+* Open-closed Principle - the pinger contains a list of users, which are classes inherited from Client. Thus, you can create a class that inherits Client for another OS without changing the Pinger class.
+* Liskov substitution principle - functions working with base classes have the ability to use objects of derived classes.
+* Interface Segregation Principle - interfaces contain only necessary methods.
+* Dependency Inversion Principle - the relationship between classes is based on dependencies on abstractions, not on concrete implemented classes.
+
 ![image](https://user-images.githubusercontent.com/69847727/134787351-17ae8031-4ecf-41ee-b876-662e076e5a03.png)
 
 ## Architecture decisions
