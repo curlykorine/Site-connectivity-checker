@@ -2,12 +2,12 @@ from checker.Pinger import Pinger
 from checker.WindowsClient import Windows_Client
 from threading import Thread
 
+
 user = Windows_Client()
 service = Pinger(sleep=7)
 service.register(user)
 thread = Thread(target= service.run)
 thread.start()
-
 
 while True:
     try:
@@ -20,29 +20,29 @@ while True:
         elif command[0].lower() == "delete":
             user.del_from_check_list(command[1])
 
-        #ex: update_add https://docs.google.com/ - site should be in checklist
+        #ex: on https://docs.google.com/ - site should be in checklist
         elif command[0].lower() == "on":
             try:
                 user.update_to_check(command[1])
             except:
                 print("site in checklist")
 
-        # ex: update_remove https://docs.google.com/ - site should be in checklist
+        # ex: off https://docs.google.com/ - site should be in checklist
         elif command[0].lower() == "off":
             try:
                 user.update_not_to_check(command[1])
             except:
                 print("site not in checklist")
 
-        #shows sites which pinger is pinging
+        # shows sites which pinger is pinging
         elif command[0].lower() == "checklist":
             print("List of sites:",user.get_check_list(only_marked=True))
 
-        #shows all sites of user
+        # shows all sites of user
         elif command[0].lower() == "sitelist":
             print("List of sites:", user.get_check_list(only_marked=False))
 
-        #just quit
+        # just quit
         elif command[0].lower() == "quit":
             service._to_check = False
             thread.join()
