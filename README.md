@@ -48,7 +48,7 @@ We decided to use [observer pattern](https://en.wikipedia.org/wiki/Observer_patt
 * *Single Responsibility Principle* - the source code consists of 2 classes: one of them is a pinger, which is responsible for pinging sites. Another class is responsible for the client side, where actions with the database take place and notifications are called. In our case, we have implemented a client under WindowClient.py.
 * *Open-closed Principle* - the pinger contains a list of users, which are classes inherited from Client. Thus, you can create a class that inherits Client for another OS without changing the Pinger class.
 * *Liskov substitution principle* - functions working with base classes have the ability to use objects of derived classes.
-* *Interface Segregation Principle* - interfaces contain only necessary methods.
+* *Interface Segregation Principle* - interfaces contain only necessary for pinging and managing data methods.
 * *Dependency Inversion Principle* - the relationship between classes is based on dependencies on abstractions, not on concrete implemented classes.
 
 ![image](https://user-images.githubusercontent.com/69847727/134787351-17ae8031-4ecf-41ee-b876-662e076e5a03.png)
