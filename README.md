@@ -44,8 +44,7 @@ Request processing system | a system that gets request from the user and dependi
 We decided to use [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) as it perfectly suits to our solution: an object (pinger) maintains dependent (user), called observer, and  automatically notifies it about any changes (sites' availability) using special methods (sending notifications).
 
 UML class diagram
-![image](![image](https://user-images.githubusercontent.com/69847727/136710676-d5fbc0ea-13d3-4f53-9d64-9a214d0b40e4.png)
-
+![image](https://user-images.githubusercontent.com/69847727/136710676-d5fbc0ea-13d3-4f53-9d64-9a214d0b40e4.png)
 
 UML sequence diagram
 ![image](https://user-images.githubusercontent.com/69847727/134787351-17ae8031-4ecf-41ee-b876-662e076e5a03.png)
