@@ -5,6 +5,7 @@ Command line application for checking site connection in a background mode by se
 Usually, when people need some site to interact with and it crashes, they update the page many times to check whether the site is available or not. Instead of this, we propose the command line app which will ping the site every minute by sending ICMP messages in a background mode. When the site becomes available the app will send notification with site link to the user.
 
 ## Prerequirements
+* Windows OS
 * Python3
 * Python libraries from [requirements.txt](https://github.com/curlykorine/Site-connectivity-checker/blob/main/requirements.txt)
 
