@@ -6,8 +6,9 @@ from checker.Client import Client
 from win10toast_click import ToastNotifier
 import validators
 
+
 class Windows_Client(Client):
-    def __init__(self, path = "./checker/database/database", icon_path = "./checker/database/icon.ico"):
+    def __init__(self, path="./checker/database/database", icon_path="./checker/database/icon.ico"):
         self._list_to_check = []
         self.site_to_open = ''
         self.toast = ToastNotifier()
@@ -17,8 +18,9 @@ class Windows_Client(Client):
     def get_notification(self, site):
         conn = sqlite3.connect(self.path)
         self.site_to_open = site
-        self.toast.show_toast(title=f"{site}", msg="Site is available", duration=3, icon_path=self.icon_path, threaded=True,
-                         callback_on_click=self.open_link)
+        self.toast.show_toast(title=f"{site}", msg="Site is available", duration=3, icon_path=self.icon_path,
+                              threaded=True,
+                              callback_on_click=self.open_link)
         while self.toast.notification_active():
             time.sleep(0.1)
         conn.close()
@@ -35,7 +37,7 @@ class Windows_Client(Client):
             conn.commit()
             print(f"{site} was added to sitelist")
             conn.close()
-        except:
+        except Exception:
             print(f"{site} is incorrect URL!")
 
     def del_from_check_list(self, site):
@@ -69,7 +71,7 @@ class Windows_Client(Client):
         conn.commit()
         conn.close()
 
-    def get_check_list(self, only_marked = True):
+    def get_check_list(self, only_marked=True):
         conn = sqlite3.connect(self.path)
         cursor = conn.cursor()
         if only_marked == True:

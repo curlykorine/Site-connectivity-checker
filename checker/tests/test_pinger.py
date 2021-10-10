@@ -1,10 +1,10 @@
 import pytest
 from checker.Pinger import Pinger
 from checker.WindowsClient import Windows_Client
-import unittest
 import sqlite3
 import os
 from uuid import getnode as get_mac
+
 
 class TestPinger():
     @pytest.mark.parametrize('url', ['https://www.microsoft.com/'])
@@ -16,7 +16,7 @@ class TestPinger():
     def test_get_notification(self, url):
         pinger = Pinger()
         client = Windows_Client()
-        pinger.send_notification(client,url)
+        pinger.send_notification(client, url)
 
     def test_register(self):
         pinger = Pinger()
@@ -121,7 +121,3 @@ class TestClient():
         array = client.get_check_list(False)
         length = array.__len__()
         assert length == 3
-
-
-
-

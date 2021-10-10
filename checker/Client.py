@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+
+
 class Client(ABC):
     @abstractmethod
     def get_notification(self, site):
@@ -21,7 +23,7 @@ class Client(ABC):
         pass
 
     @abstractmethod
-    def get_check_list(self):
+    def get_check_list(self, only_marked):
         pass
 
     @abstractmethod
