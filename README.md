@@ -66,6 +66,8 @@ Here static and dynamic view diagrams of Site connectivity checker project.
 ## Code quality
 Code review was done by Codacy linter:
 
+![image](https://user-images.githubusercontent.com/69847727/136713603-6860e93a-9f6d-437a-b530-2f148ab03d26.png)
+
 
 
 Test coverage:
