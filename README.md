@@ -67,11 +67,20 @@ Here static and dynamic view diagrams of Site connectivity checker project.
 Code review was done by Codacy linter:
 
 
+
 Test coverage:
+
 ![image](https://user-images.githubusercontent.com/69847727/136713206-50a5aba2-09c5-43b6-b49d-54a7f150bdb5.png)
 
 ## Detailed documentation
-Functional requirements, business goals, non-functional requiremants, roles and responsobilities, user stories, software development plan are available [here](https://docs.google.com/document/d/1Bx1AX4TW_gKB9FUnJ06WlnoAnZJGS-XO/edit?usp=sharing&ouid=100979451983111176819&rtpof=true&sd=true).
+- Functional requirements 
+- Business goals
+- Non-functional requiremants
+- Roles and responsobilities
+- User stories
+- Software development plan 
+
+are available [here](https://docs.google.com/document/d/1Bx1AX4TW_gKB9FUnJ06WlnoAnZJGS-XO/edit?usp=sharing&ouid=100979451983111176819&rtpof=true&sd=true).
 
 ## Authors
 Evgeniy Lutanin, Karina Singatullina,  
